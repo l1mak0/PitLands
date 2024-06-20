@@ -1,0 +1,723 @@
+@import url('https://fonts.googleapis.com/css2?family=Danfo&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
+header{
+    display: block;
+    width: 100%;
+    background: url("../images/zadphon.jpg") no-repeat 50% 20%;
+    height: 750px;
+    overflow: hidden;
+    position: relative;
+}
+.container{
+    display: block;
+    width:100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .3s;
+}
+/* Общие дефолт стили */
+a{
+    text-decoration: none;
+}
+a:hover{
+    opacity: 0.8;
+}
+
+ul{
+    list-style-type: none;
+}
+
+input{
+    outline: none;
+    padding-left: 10px;
+}
+
+.btn{
+    width: 336px;
+    padding: 20px;
+    color: white;
+    background: black;
+    border-radius: 8px;
+    font-family: 'Jost', sans-serif;
+}
+.btn:hover{
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.page-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -10px;
+    font-family: 'Jost', sans-serif;
+}
+
+.page-header h1{
+    font-weight: 800;
+}
+
+.create-btn svg:hover{
+    fill: rgb(170, 170, 170);
+    cursor: pointer;
+}
+
+
+/* Стили форм регистрации и авторизации */
+
+.reg-form{
+    border: 3px solid rgba(1, 1, 1, 0.6);
+    width: 400px;
+    height: 480px;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+    border-radius: 10px;
+    padding: 30px;
+    margin: -30px auto 30px;
+    font-family: 'Jost', sans-serif;
+}
+.reg-form:hover{
+    border: 3px solid black;
+}
+.reg-form h1{
+    font-weight: 800;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.reg-form div{
+    display: flex;
+    flex-direction: column;
+}
+.reg-form input{
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+.sec-header{
+    display: flex;
+    justify-content: space-between;
+}
+.menu_top{
+    /*margin-bottom:150px;*/
+    background: url("../images/fon_top_menu.png") no-repeat 100% 0;
+}
+
+
+.menu_top li a{
+    color: #fff;
+    display: block;
+    font: bold 20px/26px "Roboto",sans-serif;
+    overflow: hidden;
+    padding: 25px 17px 29px;
+    position: relative;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22) 0s;
+}
+.menu_top li a:before{
+    background-color: #ff5b23;
+    position: absolute;
+    bottom:0px;
+    right:0px;
+    left:0px;
+    height:0;
+    z-index: 1;
+    content:"";
+    transition: all 0.3s ease 0s;
+}
+.menu_top li a:hover{
+    background-color: transparent;
+}
+.menu_top li a:hover:before{
+    height:7px;
+}
+.menu_top .navbar-nav{
+    flex-direction: unset;
+}
+.menu_top li {
+    border-left: 1px solid #2f2f2f;
+    border-right: 1px solid #2f2f2f;
+    float: left;
+    margin-right: -1px;
+}
+.menu_top li.active a:before{
+    height:7px;
+}
+
+.search-form input{
+    width: 550px;
+    margin-left: -70px;
+    height: 40px;
+    border-radius: 5px;
+    position: relative;
+
+}
+.poloska{
+    border-color: #3cc0ee;
+}
+
+.search-form button{
+    height: 40px;
+    width: 75px;
+    background: #3cc0ee;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    z-index: 10;
+    margin-left: -60px;
+    border: none;
+}
+
+
+.catalog-link{
+    width: 300px;
+}
+.catalog-link a{
+    width: 150px;
+    height: 40px;
+    background: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Jost', sans-serif;
+}
+.catalog-link span{
+    display: block;
+    font-size: 17.5px;
+}
+
+/* Стили шапка и футер */
+.header{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user-city{
+    width: 350px;
+}
+.main-logo{
+    font-family: 'Zen Dots', sans-serif;
+    width: 200px;
+    display: flex;
+}
+
+.information-magazin{
+    display: block;
+    margin-left: 125px;
+}
+
+.widget-phone-content{
+    display: block;
+    width: 285px;
+    font-family: 'Jost', sans-serif;
+
+}
+
+.info{
+    font-family: 'Jost', sans-serif;
+}
+
+.main-logo a{
+    color: black;
+}
+.main-logo h1{
+    font-size: 50px;
+
+}
+.controlls{
+    display: flex;
+    gap: 50px;
+    margin-left: 150px;
+    font-family: 'Jost', sans-serif;
+
+}
+.controlls a{
+    color: rgba(0, 0, 0, 0.700);
+}
+footer{
+    position: relative;
+    background: white;
+}
+.footer-info{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: white;
+    left: 150px;
+    bottom: 20px;
+    z-index: 10;
+    padding: 20px;
+    padding-left: 35px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: 'Jost', sans-serif;
+}
+.footer-logo a{
+    color: black;
+}
+.footer-logo h1{
+    font-size: 50px;
+    font-family: 'Danfo', sans-serif;
+}
+.footer-info a{
+    color: black;
+}
+.footer-info ul{
+    margin-top: 30px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.footer-company-info{
+    display: block;
+    margin-top: 50px;
+}
+/* стили страницы каталога */
+
+.card{
+    width: 426px;
+    height: 370px;
+    border: none;
+    background: rgb(248, 248, 248);
+    font-family: 'Jost', sans-serif;
+}
+
+.card:hover{
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+}
+
+.row {
+    margin-top: 30px;
+
+}
+
+.card-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-body h3{
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.create-button{
+    margin-left: 160px;
+}
+.create-ul{
+    width: 200px;
+    height: 0.1px;
+    overflow: hidden;
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 3;
+}
+
+.create-ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+}
+.create-ul li:hover{
+    cursor: pointer;
+    background: rgb(235, 235, 235);
+}
+.create-ul a{
+    color: white;
+}
+.sec-header{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*.catalog-nav{*/
+/*    background: #3cc0ee;*/
+/*    width: 1300px;*/
+/*    height: 100px;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+
+/*}*/
+.catalog-nav{
+    width: 1300px;
+    height: 50px;
+    margin-top: 50px;
+    margin-left: 250px;
+}
+.catalog-nav a{
+    width: 170px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase ;
+    background-color: #3cc0ee;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 24px;
+
+}
+.catalog-nav a:not(:last-child) {
+    border-right: none;
+}
+.catalog-nav:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.catalog-nav a:hover {
+    background-color: #77d9fa;
+}
+
+.catalog-nav div{
+    margin:0 auto;
+}
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-img-top img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+.card-img-top {
+    width: 100%; /* Задает ширину изображения равной ширине карточки */
+    overflow: hidden; /* Обрезает изображение, если оно выходит за пределы блока */
+}
+
+.card-img-top img {
+    width: 100%;
+    height: auto; /* Поддерживает пропорции изображения */
+    display: block;
+}
+
+.footer{
+    background-color: #fff;
+    color:#fff;
+}
+.footer h3{
+    color:#333333;
+    margin-top:0px;
+}
+.footer li a{
+    color:#777;
+}
+.footer ul{
+    padding-left:10px;
+}
+.footer .copy{
+    border-top: 1px solid #e7e7e7;
+    padding:20px 0;
+}
+.footer p{
+    color:#333333;
+    margin:0px;
+}
+.footer_menu{
+    display: block;
+    width:30%;
+    float:left;
+}
+.menu_footer_and_contact{
+    padding:40px 0 40px;
+}
+.contacts{
+    border-left:1px solid #e7e7e7;
+}
+.write_email{
+    margin-top:22px;
+}
+.write_email p{
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    color: #000000;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    padding: 3px 11px 3px 0;
+    text-transform: uppercase;
+}
+.write_email_and_sseti_wrap input {
+    widows: 100%;
+    display: block;
+    padding: 7px 50px 7px 12px;
+}
+.write_email_and_sseti_wrap form{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width:250px;
+}
+.write_email_and_sseti_wrap button{
+    background-color: #77d9fa;
+    border: 0 none;
+    border-radius: 0;
+    bottom: 0;
+    color: #fff;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    z-index: 2;
+}
+.sseti_wrap a{
+    background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #fff;
+    display: block;
+    font-size: 26px;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    float:left;
+    transition: all 0.15s ease-in 0s;
+    padding:7px 10px 5px;
+    width:55px;
+    text-align: center;
+    margin-right: 7px;
+}
+.sseti_wrap a::after {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 50%;
+    box-sizing: content-box;
+    content: " ";
+    height: 100%;
+    left: -1px;
+    opacity: 0;
+    padding: 1px;
+    pointer-events: none;
+    position: absolute;
+    top: -1px;
+    transform: scale(1.2);
+    transition: transform 0.2s ease 0s, opacity 0.3s ease 0s;
+    width: 100%;
+    z-index: -1;
+}
+.sseti_wrap a:hover {
+    color: #ff5b23;
+}
+.sseti_wrap a:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+.sseti_wrap{
+    margin-top: 6px;
+    text-align: right;
+}
+.sseti_wrap > div {
+    display: inline-block;
+    overflow: hidden;
+    padding: 10px;
+    text-align: right;
+}
+.contacts p{
+    font-size:17px;
+    margin-bottom:15px;
+}
+.contacts p i{
+    margin-right: 10px;
+    color:#ff5b23;
+    font-size: 20px;
+}
+
+.cart_top a:hover{
+    background-color: #343434;
+    color:#fff;
+}
+.mylist:hover{
+    opacity: 0.9;
+    color: #fff;
+    text-decoration: none;
+}
+.cart:hover{
+    opacity: 0.9;
+    color: #fff;
+    text-decoration: none;
+}
+#w0-collapse li a:hover{
+    color:#ff5b23;
+}
+.menu_top #w0{
+    margin-bottom: 10px;
+}
+.ban_block_wrap{
+    margin-top:-200px;
+}
+
+.ban_block h2{
+    font-size:40px;
+    color:#fff;
+    text-transform: uppercase;
+}
+.ban_block p{
+    color:#fff;
+    font-size:20px;
+    width:50%;
+    display: block;
+}
+.ban_block > div{
+    position: relative;
+    overflow: hidden;
+    /*background-color: #3cc0ee;*/
+}
+.ban_block a{
+    display: block;
+    padding: 20px 35px 30px;
+    position: relative;
+
+}
+.ban1{
+    display: block;
+}
+.ban1 img{
+    position: absolute; /* Абсолютное позиционирование позволяет нам точно разместить изображение */
+    bottom: -300px; /* Опускаем изображение на 10 пикселей вниз от нижнего края контейнера */
+    left: 0; /* Выравниваем изображение по левому краю контейнера */
+    width: 100%; /* Задаем ширину изображения равной ширине контейнера */
+    object-fit: cover; /* Обрезаем изображение, сохраняя пропорции */
+}
+.ban_block img{
+    display: block;
+    position: absolute;
+    z-index: 0;
+    margin-top:3px;
+    margin-left: 20px;
+}
+.ban_block span{
+    display: inline-block;
+    text-align: center;
+    background: #3cc0ee none repeat scroll 0 0;
+    border: medium none;
+    font-size:18px;
+    padding: 16px 20px 18px 21px;
+    position: relative;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    color:#fff;
+    font-weight: 600;
+}
+.ban_block span:hover{
+    background-color: #343434;
+}
+.ban_block:hover img{
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.ban_block:hover a{
+    text-decoration: none;
+}
+.ban_block span:hover{
+    opacity: 0.8;
+}
+.ban_block:hover a{
+    text-decoration: none;
+}
+.product-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-details {
+    padding: 15px;
+    background: #fff;
+}
+
+.product-title {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.product-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.product-meta {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.product-actions .btn {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.edit-btn {
+    background-color: #2ecc71;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+}
+
+/* Добавьте медиа-запросы для адаптивного дизайна */
+@media (max-width: 768px) {
+    .product-card {
+        flex-direction: column;
+    
