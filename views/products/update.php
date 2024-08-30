@@ -7,16 +7,16 @@ use yii\helpers\Html;
  * @var $categories
 */
 
-$this->title = 'Create Products';
+$this->title = 'Update Products: ' . $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = 'Update';
 
 foreach($categories as $category){
     $cat[$category->id] = $category->title;
 }
-
 ?>
-<div class="products-create">
+<div class="products-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

@@ -1,16 +1,26 @@
 <?php
 
 namespace app\controllers;
-use app\entity\Products;
-use app\repository\ProductRepository;
+
+use app\entity\Categories;
+use yii\data\ActiveDataProvider;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
 use app\repository\CategoryRepository;
-use Yii;
+use app\repository\ProductRepository;
 use yii\web\UploadedFile;
 use yii\filters\AccessControl;
+use Yii;
 
-class ProductsController extends \yii\web\Controller
+/**
+ * CategoryController implements the CRUD actions for Categories model.
+ */
+class CatalogController extends Controller
 {
-    
+    /**
+     * @inheritDoc
+     */
     public function behaviors()
     {
         return [
@@ -27,10 +37,22 @@ class ProductsController extends \yii\web\Controller
             ],
         ];
     }
+
     /**
      * Lists all Categories models.
      *
-     * @return string*
+     * @return string
+     */
+    public function actionIndex()
+    {
+        $categories = CategoryRepository::getCategory();
+
+        return $this->render('index', [
+            'categories' => $categories,
+        ]);
+    }
+
+    /**
      * Displays a single Categories model.
      * @param int $id ID
      * @return string
@@ -38,11 +60,11 @@ class ProductsController extends \yii\web\Controller
      */
     public function actionView($id)
     {
-        $product = ProductRepository::getProductById($id);
+        $products = ProductRepository::getProductsByCategoryId($id);
 
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'product' => $product
+            'products' => $products
         ]);
     }
 
@@ -53,25 +75,18 @@ class ProductsController extends \yii\web\Controller
      */
     public function actionCreate()
     {
-        $model = new Products();
-        $categories = CategoryRepository::getAll();
+        $model = new Categories();
 
         if (Yii::$app->request->isPost) {
             $model->load($this->request->post());
             $model->img = UploadedFile::getInstance($model, 'img');
-            $model->img2 = UploadedFile::getInstance($model, 'img2');
 
             if(empty($model->img)){
-                $model->img = 'prod-zagl.jpg';
+                $model->img = 'cat-zagl.jpg';
             }else{
-                $model->img->saveAs("products_img/{$model->img->baseName}.{$model->img->extension}");
-            };
+                $model->img->saveAs("category_img/{$model->img->baseName}.{$model->img->extension}");
+            }
 
-            if(empty($model->img2)){
-                $model->img2 = 'prod-zagl.jpg';
-            }else{
-                $model->img2->saveAs("products_img/{$model->img2->baseName}.{$model->img2->extension}");
-            };
             $model->save(false);
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -80,7 +95,6 @@ class ProductsController extends \yii\web\Controller
 
         return $this->render('create', [
             'model' => $model,
-            'categories' => $categories
         ]);
     }
 
@@ -94,29 +108,23 @@ class ProductsController extends \yii\web\Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $categories = CategoryRepository::getAll();
 
         if ($this->request->isPost) {
             $model->load($this->request->post());
             $model->img = UploadedFile::getInstance($model, 'img');
+
             if(empty($model->img)){
-                $model->img = ProductRepository::getProductById($model->id)->img;
+                $model->img = CategoryRepository::getOneFromCategories(['id' => $model->id])->img;
             }else{
-                $model->img->saveAs("products_img/{$model->img->baseName}.{$model->img->extension}");
-            }
-            $model->img2 = UploadedFile::getInstance($model, 'img2');
-            if(empty($model->img2)){
-                $model->img2 = ProductRepository::getProductById($model->id)->img2;
-            }else{
-                $model->img2->saveAs("products_img/{$model->img2->baseName}.{$model->img2->extension}");
-            }
+                $model->img->saveAs("category_img/{$model->img->baseName}.{$model->img->extension}");
+            };
+
             $model->save(false);
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
             'model' => $model,
-            'categories' => $categories
         ]);
     }
 
@@ -131,7 +139,7 @@ class ProductsController extends \yii\web\Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['/catalog/']);
+        return $this->redirect(['index']);
     }
 
     /**
@@ -143,7 +151,7 @@ class ProductsController extends \yii\web\Controller
      */
     protected function findModel($id)
     {
-        if (($model = Products::findOne(['id' => $id])) !== null) {
+        if (($model = Categories::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

@@ -5,35 +5,18 @@ use app\entity\Categories;
 class CategoryRepository
 {
 
-    public static function getAllCategories()
+    public static function getAll()
     {
-        return Categories::find()->all();
-    }
-    public static function getCategory($id)
-    {
-        return Categories::find()->where(["id" => $id])->one();
+        return CAtegories::find()->all();
     }
 
-    public static function createNewCategory($title, $description)
+    public static function getCategory($where = [], $orderBy = null)
     {
-        $category = new Categories();
-        $category->title = $title;
-        $category->description = $description;
-        $category->save();
-        return $category->id;
+        return Categories::find()->where($where)->orderBy($orderBy)->all();
+    }
+    public static function getOneFromCategories($where = [])
+    {
+        return Categories::find()->where($where)->one();
     }
 
-    public static function categoryUpdate($title, $description, $id)
-    {
-        $category = Categories::find()->where(["id" => $id])->one();
-        $category->title = $title;
-        $category->description = $description;
-        $category->update();
-    }
-
-    public static function deleteCategory($id)
-    {
-        $category = Categories::find()->where(["id" => $id])->one();
-        $category->delete();
-    }
 }

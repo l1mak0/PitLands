@@ -716,8 +716,74 @@ footer{
     background-color: #e74c3c;
 }
 
-/* Добавьте медиа-запросы для адаптивного дизайна */
-@media (max-width: 768px) {
-    .product-card {
-        flex-direction: column;
-    
+.basket-page{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Jost', sans-serif;
+}
+.basket-page-title{
+    margin-top: -40px;
+    margin-bottom: 40px;
+}
+.basket-page a{
+    color: black;
+}
+
+.basket-products{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 50px;
+}
+.basket-product-card a{
+    display: flex;
+    gap: 30px
+}
+.b-c-img img{
+    width: 100px;
+}
+.b-c-info{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.b-c-content{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    gap: 10px;
+}
+.b-c-content .product-desc{
+    font-size: 12px;
+}
+.basket-page .btn-danger{
+    position: absolute;
+    z-index: 2;
+    display: block;
+    margin-left: 840px;
+    margin-top: -20px;
+}
+
+.basket-info{
+    height: 300px;
+    padding: 20px;
+    margin-top: 110px;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.241);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.info-item{
+    display: flex;
+    justify-content: space-between;
+}
+.basket-info .btn{
+    height: 50px;
+    color: white;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
